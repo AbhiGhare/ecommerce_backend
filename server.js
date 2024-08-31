@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-    origin: ['http://localhost:5173','http://localhost:5174','https://ecommerce-frontend-asit.vercel.app','https://ecommerce-frontend-blond-chi.vercel.app','https://66d232c10a8c104f2a8a55de--candid-kelpie-c5af06.netlify.app','https://candid-kelpie-c5af06.netlify.app'], // Replace with your frontend URL
+    origin: ['http://localhost:5173','http://localhost:5174','https://ecommerce-frontend-asit.vercel.app','https://ecommerce-frontend-blond-chi.vercel.app','https://66d232c10a8c104f2a8a55de--candid-kelpie-c5af06.netlify.app','https://candid-kelpie-c5af06.netlify.app','https://ecommerce-frontend-nu-five.vercel.app'], // Replace with your frontend URL
     methods: 'GET,POST,PUT,DELETE',
     credentials: true
   }));
