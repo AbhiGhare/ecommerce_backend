@@ -25,8 +25,10 @@ export const createPaymentIntent = async(req,res)=>{
       payment_method_types:["card"],
       line_items:lineItems,
       mode:"payment",
-      success_url: "http://localhost:5173/success/{CHECKOUT_SESSION_ID}",
-      cancel_url:"http://localhost:5173/cancel",
+      // success_url: "http://localhost:5173/success/{CHECKOUT_SESSION_ID}",
+      // cancel_url:"http://localhost:5173/cancel",
+      success_url: "https://ecommerce-frontend-nu-five.vercel.app/success/{CHECKOUT_SESSION_ID}",
+      cancel_url:"https://ecommerce-frontend-nu-five.vercel.app/cancel",
       shipping_address_collection: {
         allowed_countries: ['IN', 'US', 'CA'], // Add allowed countries (IN for India, US for United States, CA for Canada, etc.)
       },
