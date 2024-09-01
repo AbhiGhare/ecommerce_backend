@@ -8,6 +8,7 @@ import paymentRoutes from './routes/paymentRoutes.js'
 import cartRoutes from './routes/cartRoutes.js';
 import { errorHandler } from './middleware/errorHandler.js';
 import favoriteProductRoutes from './routes/favoriteProductRoutes.js';
+import Sessions from './routes/sessionRoutes.js';
 import cors from 'cors';
 
 dotenv.config();
@@ -33,6 +34,7 @@ app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api', cartRoutes);
 app.use('/api/favorites', favoriteProductRoutes)
+app.use('/api/sessions', Sessions)
 
 // Error handler middleware
 app.use(errorHandler);

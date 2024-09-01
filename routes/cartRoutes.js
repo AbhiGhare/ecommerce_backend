@@ -4,7 +4,8 @@ import {
   addToCart,
   getCart,
   updateCartItem,
-  removeFromCart
+  removeFromCart,
+  deleteFromCart
 } from '../controllers/cartController.js';
 import { protect } from '../middleware/authMiddleware.js'; // Assuming you have an auth middleware
 
@@ -21,5 +22,6 @@ router.put('/cart/item', protect, updateCartItem);
 
 // Remove item from cart
 router.delete('/cart/item', protect, removeFromCart);
+router.delete('/cart/deleteAll', protect, deleteFromCart);
 
 export default router;

@@ -29,6 +29,8 @@ export const addToCart = async (req, res) => {
 
 // Get cart items
 export const getCart = async (req, res) => {
+  console.log(req.user,'req.user');
+  
   const userId = req.user._id;
 
   try {
@@ -89,6 +91,23 @@ export const removeFromCart = async (req, res) => {
     } else {
       res.status(404).json({ message: 'Item not found in cart' });
     }
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+export const deleteFromCart = async (req, res) => {
+  const userId = req.user._id;
+
+  try {
+    const cart = await Cart.findOne({ user: userId });
+    if (!cart) {
+      return res.status(404).json({ message: 'Cart not found' });
+    }
+
+    cart.cartItems = []; // Clear all items
+    await cart.save();
+    res.status(200).json(cart);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
